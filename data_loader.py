@@ -1,6 +1,8 @@
 import scipy
 from glob import glob
 import numpy as np
+from skimage.transform import resize
+import imageio
 
 class DataLoader():
     def __init__(self, dataset_name, img_res=(128, 128)):
@@ -8,21 +10,22 @@ class DataLoader():
         self.img_res = img_res
 
     def load_data(self, domain, batch_size=1, is_testing=False):
-        data_type = "train%s" % domain if not is_testing else "test%s" % domain
-        path = glob('./datasets/%s/%s/*' % (self.dataset_name, data_type))
-
+        path = glob('./%s/%s%s/*' % (self.dataset_name, "train", domain))
+        #data_type = "train%s" % domain if not is_testing else "test%s" % domain
+        
+        
         batch_images = np.random.choice(path, size=batch_size)
-
         imgs = []
+        print(domain, batch_images)
         for img_path in batch_images:
             img = self.imread(img_path)
             if not is_testing:
-                img = scipy.misc.imresize(img, self.img_res)
+                img = resize(img, self.img_res)
 
                 if np.random.random() > 0.5:
                     img = np.fliplr(img)
             else:
-                img = scipy.misc.imresize(img, self.img_res)
+                img = resize(img, self.img_res)
             imgs.append(img)
 
         imgs = np.array(imgs)/127.5 - 1.
@@ -30,11 +33,10 @@ class DataLoader():
         return imgs
 
     def load_batch(self, batch_size=1, is_testing=False):
-        data_type = "train" if not is_testing else "val"
-        path_A = glob('./datasets/%s/%sA/*' % (self.dataset_name, data_type))
-        path_B = glob('./datasets/%s/%sB/*' % (self.dataset_name, data_type))
-
-        self.n_batches = int(min(len(path_A), len(path_B)) / batch_size)
+        path_A = glob('./%s/%sA/*' % (self.dataset_name, "train"))
+        path_B = glob('./%s/%sB/*' % (self.dataset_name, "train"))
+        print(len(path_A), len(path_B))
+        self.n_batches = int(min(len(path_A), len(path_B)) / batch_size)      
         total_samples = self.n_batches * batch_size
 
         # Sample n_batches * batch_size from each path list so that model sees all
@@ -46,12 +48,12 @@ class DataLoader():
             batch_A = path_A[i*batch_size:(i+1)*batch_size]
             batch_B = path_B[i*batch_size:(i+1)*batch_size]
             imgs_A, imgs_B = [], []
-            for img_A, img_B in zip(batch_A, batch_B):
+            for img_A, img_B in zip(batch_A, batch_B):            
                 img_A = self.imread(img_A)
                 img_B = self.imread(img_B)
 
-                img_A = scipy.misc.imresize(img_A, self.img_res)
-                img_B = scipy.misc.imresize(img_B, self.img_res)
+                img_A = resize(img_A, self.img_res)
+                img_B = resize(img_B, self.img_res)
 
                 if not is_testing and np.random.random() > 0.5:
                         img_A = np.fliplr(img_A)
@@ -67,9 +69,28 @@ class DataLoader():
 
     def load_img(self, path):
         img = self.imread(path)
-        img = scipy.misc.imresize(img, self.img_res)
+        img = resize(img, self.img_res)
         img = img/127.5 - 1.
         return img[np.newaxis, :, :, :]
+      
+    def get_img(self, img):
+        img = resize(img, self.img_res)
+        img = img/127.5 - 1.
+        return img
+      
+    def revert_img(self, img, new_res):
+      img = resize(img, new_res)
+      img = (img)*0.5 + 0.5
+      img = img*255
+      img = img.astype(np.float32)
+      return img 
 
     def imread(self, path):
-        return scipy.misc.imread(path, mode='RGB').astype(np.float)
+        return imageio.imread(path, as_gray=False, pilmode="RGB").astype(np.float)
+      
+def revert_img(img, new_res):
+  img = (img)*0.5 + 0.5
+  img = img*255
+  img = resize(img, new_res)
+  img = img.astype(np.float32)
+  return img
