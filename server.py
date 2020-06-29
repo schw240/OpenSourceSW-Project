@@ -10,7 +10,7 @@ import sys
 
 while True:
 
-    host = "192.168.0.13"
+    host = "192.168.0.2"
     port = 9955
     server_sock = socket.socket(socket.AF_INET)
     server_sock.bind((host, port))
@@ -44,7 +44,7 @@ while True:
     except Exception:
         print(addr,"exception")
         shutdown(client_sock, SHUT_RD)
-    filename = str(now) + ".jpg"
+    filename = "./" + str(now) + ".jpg"
     print("1point")
     f=open(filename,'rb')
     data2=f.read()
