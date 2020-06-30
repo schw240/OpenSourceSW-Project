@@ -41,6 +41,11 @@ pip install git+https://www.github.com/keras-team/keras-contrib.git
 ## Dataset
 
 Source: UTKFace - Large Scale Face Dataset + drugIdentification(https://github.com/JoinGitHubing/drugIdentification) + etc(Google , SHERIFF)
+데이터의 경우 비지도학습 딥러닝 알고리즘인 CycleGAN의 결과를 최대로 높혀주기 위하여 인위적으로 데이터를 솎아주었습니다.
+전체 데이터중 남자만 따로 빼서 학습을 시켰습니다. 
+학습 데이터셋은 2개이며 현재 깃헙에 올라간 남자 데이터 셋은 man.zip입니다. dataset 폴더안에 있습니다.
+여성과 남성 모두 포함된 데이터셋은 train으로 나누어 올렸습니다. 
+일반인인 경우는 trainA 중독자의 경우는 trainB 입니다.
 
 ## Test Result
 
