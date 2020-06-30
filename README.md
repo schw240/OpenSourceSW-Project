@@ -33,9 +33,9 @@ Source: UTKFace - Large Scale Face Dataset + drugIdentification(https://github.c
 문제점: CycleGan은 이미지 데이터가 많이 필요한 Unsupervised 알고리즘인데
 비지도학습의 경우 컴퓨터가 스스로 학습할 수 있도록 목표가 명확한 깔끔한 이미지 데이터셋이 필요합니다.
 음주 , 흡연, 마약등의 중독증상에 의하여 변화하는 가장 큰 특징들은 3가지가 있습니다.
-# 1. 피부의 붉은 반점
-# 2. 노화(주름)
-# 3. 피부톤(down)
+### 1. 피부의 붉은 반점
+### 2. 노화(주름)
+### 3. 피부톤(down)
 
 이 3가지 문제점들을 전부 가지고 있거나 아니면 각각의 문제점들을 가진 고해상도의 이미지가 필요한데
 저희가 자료수집에 많은 시간을 투자하였지만 결국 충분한 자료를 찾지 못하였습니다. 
@@ -48,5 +48,19 @@ Source: UTKFace - Large Scale Face Dataset + drugIdentification(https://github.c
 ![CNN이용 고해상도 변환 500장](https://user-images.githubusercontent.com/54871612/86091456-eb3b5500-bae6-11ea-86d9-1587bf46e2b8.png)
 
 ### 샤프닝 + 필터
+
+![after_sharp_CNN3000장 이미지 변환](https://user-images.githubusercontent.com/54871612/86091912-a532c100-bae7-11ea-8a65-105f5aff9a3c.jpg)
+![after_sharp_CNN500장 이미지 변환](https://user-images.githubusercontent.com/54871612/86091919-a663ee00-bae7-11ea-9daa-63ea53f07713.jpg)
+![after_sharp](https://user-images.githubusercontent.com/54871612/86091924-a82db180-bae7-11ea-9115-38de589d3374.jpg)
+
+
+이미지 결과를 개선해보기 위해 노력을 해보았는데 가장 깔끔한 이미지는
+결과로 나온 이미지에 가우시안 필터 + 샤프닝을 해줄 경우 가장 깔끔하게 보입니다.
+
+결과 이미지는 bmp파일로 저장이 되는데 깃헙에 업로드가 안되는 관계로 보고서에서 보실 수 있습니다.
+
+
+
+
 
 
