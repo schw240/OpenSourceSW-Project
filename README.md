@@ -97,10 +97,6 @@ Source: UTKFace - Large Scale Face Dataset + drugIdentification(https://github.c
 
 변경된 이미지 어플에서 확인
 
-최종 결과물은 보고서에 있습니다.
-
-
-
 
 
 
