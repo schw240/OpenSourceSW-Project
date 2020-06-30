@@ -12,12 +12,31 @@
 얼굴이 어떻게 변화하는지 사용자에게 이미지를 받아서 어플리케이션을 통해
 변형된 얼굴 이미지를 보여주는 프로젝트입니다.
 
+
+
 ###  Unpaired Image to Image Transition
 
 Source: Unpaired Image-to-Image Translation using Cycle-Consistent Adversarial Networks
 https://junyanz.github.io/CycleGAN/
 
 The previous image-to-image translation such as Pix2Pix learns the mapping between an input image and an output image with a set of aligned image pairs. However, for many tasks, paired training dataset is unavailable. CycleGAN solves this issue by learning to translate an image from a source domain X to a target domain Y in the absence of paired examples.
+
+## Usage
+- COLAB(Training) - tensorflow 2.0
+- Tensorflow(파이썬 server , inference 코드) 1.13
+- Keras 2.3.1
+- keras-contrib 2.0.8
+- Python 3.6
+
+prerequisites
+
+!pip install opencv-python
+!apt update && apt install -y libsm6 libxext6 libxrender-dev
+!pip install requests
+!pip install keras  
+!pip install imageio
+!pip install scikit-image
+pip install git+https://www.github.com/keras-team/keras-contrib.git
 
 ## Dataset
 
