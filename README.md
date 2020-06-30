@@ -27,7 +27,6 @@ Source: UTKFace - Large Scale Face Dataset + drugIdentification(https://github.c
 
 ![3000장 이미지 변환 결과(before, after) (2)](https://user-images.githubusercontent.com/54871612/86091095-4456b900-bae6-11ea-94a8-6f3a08756ef5.jpg)
 ![3000장 이미지 변환 결과(before, after) (3)](https://user-images.githubusercontent.com/54871612/86091096-44ef4f80-bae6-11ea-9fc9-9459f6d04f06.jpg)
-![500장 이미지 변환 결과(before , after) (1)](https://user-images.githubusercontent.com/54871612/86091098-44ef4f80-bae6-11ea-94ad-5abc20538f5c.jpg)
 ![500장 이미지 변환 결과(before , after) (2)](https://user-images.githubusercontent.com/54871612/86091099-4587e600-bae6-11ea-99ce-2b578f20e40a.jpg)
 
 문제점: CycleGan은 이미지 데이터가 많이 필요한 Unsupervised 알고리즘인데
