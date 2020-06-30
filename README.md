@@ -84,11 +84,8 @@ Source: UTKFace - Large Scale Face Dataset + drugIdentification(https://github.c
 
 # 얼굴 이미지 변환 어플 구성
 
-![KakaoTalk_20200630_154337780_02](https://user-images.githubusercontent.com/54871612/86092487-85e86380-bae8-11ea-9c75-ddc85d7b151b.jpg)
-
-
-![KakaoTalk_20200630_154337780_01](https://user-images.githubusercontent.com/54871612/86092538-97ca0680-bae8-11ea-8a99-8529a57dcf48.jpg)
-
+![KakaoTalk_20200630_220438862](https://user-images.githubusercontent.com/54871612/86129508-c31b1880-bb1d-11ea-82ae-c4c1d8bfd5a2.jpg)
+![KakaoTalk_20200630_202825242](https://user-images.githubusercontent.com/54871612/86129520-cca48080-bb1d-11ea-8e4a-98fbf31266cb.jpg)
 
 
 어플 실행 후 -> 본인이 얼굴이 나온 이미지 선택
