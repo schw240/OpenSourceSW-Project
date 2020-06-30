@@ -67,7 +67,6 @@ Source: UTKFace - Large Scale Face Dataset + drugIdentification(https://github.c
 ![KakaoTalk_20200630_154337780_01](https://user-images.githubusercontent.com/54871612/86092538-97ca0680-bae8-11ea-8a99-8529a57dcf48.jpg)
 
 
-![KakaoTalk_20200630_154337780](https://user-images.githubusercontent.com/54871612/86092552-9dbfe780-bae8-11ea-8c55-4e0c2364e24a.jpg)
 
 어플 실행 후 -> 본인이 얼굴이 나온 이미지 선택
 
